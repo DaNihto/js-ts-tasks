@@ -6,4 +6,13 @@
  */
 module.exports.compareTwoNumbers = function compareTwoNumbers(firstNumber, secondNumber) {
   throw new Error('Not implemented');
+  if (firstNumber>secondNumber) {
+    return ">";
+  }
+  else if (firstNumber<secondNumber) {
+    return "<";
+  }
+  else if (firstNumber===secondNumber) {
+    return "=";
+  }
 };
