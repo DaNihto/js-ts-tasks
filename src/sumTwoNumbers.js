@@ -5,5 +5,5 @@
  * @returns {number}
  */
 module.exports.sumTwoNumbers = function sumTwoNumbers(firstNumber, secondNumber) {
-  return (firstNumber+secondNumber);
+  return (Number(firstNumber)+Number(secondNumber));
 };
