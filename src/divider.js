@@ -6,5 +6,6 @@
  * @returns {number}
  */
 module.exports.divider = function divider(n, k) {
-  throw new Error('Not implemented');
+  wholePart=Math.floor(n/k);
+  return (wholePart+" "+(n%k));
 };
