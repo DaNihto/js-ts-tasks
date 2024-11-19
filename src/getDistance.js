@@ -7,5 +7,8 @@
  * @returns {number}
  */
 module.exports.getDistance = function getDistance(firstPoint, secondPoint) {
-  throw new Error('Not implemented'); // remove me and write a solution
+  let dx = secondPoint.X - firstPoint.X;
+  let dy = secondPoint.Y - firstPoint.Y;
+  let distance = Math.sqrt(dx**2+dy**2);
+  return distance.toFixed(2);
 };
