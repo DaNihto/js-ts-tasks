@@ -9,7 +9,7 @@
  * @returns {function}
  */
 module.exports.sort = function sort(TestUtils) {
-  return function() {
-    sortComparator(TestUtils);
+  return function () {
+    return [...arguments].sort(TestUtils.sortComparator);
   };
 };

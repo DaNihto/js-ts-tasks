@@ -13,10 +13,7 @@
  * @returns {function}
  */
 module.exports.palindrome = function palindrome(TestUtils) {
-  return function (str) {
-    str = str.toLowerCase();
-    str = str.replace(/[^A-Za-z0-9]/g, '');
-    return isPalindrome(str);
-
-  }
+  return (str) => TestUtils.isPalindrome.apply({
+    str: str.toLowerCase().replace(/[^0-9a-z]/g, ''),
+  });
 };
