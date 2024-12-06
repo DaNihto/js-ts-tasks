@@ -1,5 +1,16 @@
 class User {
-  // Your code for class User here
+  #firstName;
+  #secondName
+  #age
+  constructor(firstName, secondName, age) {
+    this.firstName = firstName;
+    this.secondName = secondName;
+    this.age = age;
+  };
+  celebrateBirthday() {
+    console.log(this.#firstName + "is celebrating their birthday!");
+    this.#age++;
+  }
 }
 
 /**
@@ -16,7 +27,7 @@ module.exports.User = User;
  * @returns {User}
  */
 module.exports.createUser = function (firstName, secondName, age) {
-  throw new Error('Not implemented'); // remove this line and put your code here
+  return new User(firstName, secondName, age);
 };
 
 /**
@@ -25,7 +36,11 @@ module.exports.createUser = function (firstName, secondName, age) {
  * @returns {Array<User>}
  */
 module.exports.createUsers = function (data) {
-  throw new Error('Not implemented'); // remove this line and put your code here
+  let users = [];
+  for (let i = 0; i < data.length; i++) {
+    users.push(new User(data[i].firstName, data[i].secondName, data[i].age));
+  };
+  return users;
 };
 
 /**
@@ -35,7 +50,7 @@ module.exports.createUsers = function (data) {
  * @returns {Array<Users>}
  */
 module.exports.findUsersByAge = function (users, age) {
-  throw new Error('Not implemented'); // remove this line and put your code here
+  return users.filter(user => user.age === age);
 };
 
 /**
@@ -44,14 +59,17 @@ module.exports.findUsersByAge = function (users, age) {
  * @returns {function(*): *[]}
  */
 module.exports.createUsersSortFn = function (TestUtils) {
-  throw new Error('Not implemented'); // remove this line and put your code here
+  return (users) => users.toSorted(TestUtils.comparator);
 };
-
 /**
  * In Array of Users every User under odd index in Array should celebrate his birthday
  * @param {Array<User>} users
  * @return {Array<User>}
  */
 module.exports.celebrate = function (users) {
-  throw new Error('Not implemented'); // remove this line and put your code here
+  if (users.length >= 2) {
+    for (let i = 1; i < users.length; i += 2) {
+      users[i].celebrateBirthday();
+    }
+  }
 };
