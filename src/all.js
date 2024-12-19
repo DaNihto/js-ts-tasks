@@ -4,5 +4,15 @@
  * @returns Promise
  */
 module.exports.all = function all(promisesArray) {
-  throw new Error('Not implemented'); // remove me and write your code
+  let res = [];
+  for (let i = 0; i <= promisesArray.length; i++) {
+    promisesArray[i].then((data) => {
+      res.push(data);
+    }, 
+    (data) => {
+      return res;
+    });
+
+  }
+  return res;
 };
