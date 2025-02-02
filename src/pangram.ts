@@ -6,5 +6,22 @@
  * @returns {boolean}
  */
 module.exports.pangram = function (word: string | number): boolean {
-  throw new Error('Not implemented'); // delete this line and write your code
+  let letters: string[] = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',];
+  let numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+  let isPangram: boolean = true
+  if (typeof word == 'string') {
+    letters.forEach(letter => {
+      if (!word.includes(letter)) {
+        isPangram = false;
+      }
+    });
+    return isPangram;
+  } else {
+    numbers.forEach(num => {
+      if (!word.toString().includes(num.toString())) {
+        isPangram = false;
+      }
+    });
+    return isPangram;
+  }
 };
